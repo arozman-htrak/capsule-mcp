@@ -295,6 +295,23 @@ curl -X POST https://your-service.onrender.com/mcp/ \
 
 ---
 
+## Docker Image
+
+Run the MCP server inside a Docker container:
+
+```bash
+# Build the image
+docker build -t capsule-mcp .
+
+# Start the server
+docker run -p 8000:8000 \
+  -e CAPSULE_API_TOKEN=your_capsule_api_token_here \
+  capsule-mcp
+```
+
+Set `MCP_API_KEY` if you need HTTP authentication. The API will be available at http://localhost:8000/mcp/.
+
+
 ## For Developers
 
 ### Development Setup
